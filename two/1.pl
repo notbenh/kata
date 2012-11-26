@@ -7,6 +7,7 @@ use Data::Dumper; sub D(@){ warn Dumper(@_) };
 sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
+D {IN => [$goal, \@opts]};
   my ($first,$last) = (0, $#opts);
   my $i;
   while($first != $last) {
