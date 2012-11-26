@@ -3,6 +3,11 @@ use strict;
 use warnings;
 use Test::Most qw{no_plan};
 
+sub b_chop{
+  my $goal = shift;
+  my @opts = @$_[0];
+  return int($#@opts);
+}
 
 
 is -1, b_chop(3, []);
