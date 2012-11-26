@@ -9,7 +9,6 @@ sub b_chop{
   my @opts = @{$_[0]};
   my ($first,$mix,$last) = (0, int($#opts/2), $#opts);
 D [$first,$last]
-  my $mid = int($last/2); # half
 }
 
 
