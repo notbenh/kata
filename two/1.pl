@@ -16,7 +16,8 @@ D {IN => [$goal, \@opts]};
     my $mid = ceil( $first + ($last-$first)/2 );
     D {FML => [$first,$mid,$last]};
     return -1 unless defined $opts[$mid];
-    return $mid if $goal  == $opts[$mid];
+    return $first if $goal == $opts[$first];
+    return $mid   if $goal == $opts[$mid];
     $first = $mid if $goal > $opts[$mid];
     $last  = $mid if $goal < $opts[$mid]
   } while($first != $last);
