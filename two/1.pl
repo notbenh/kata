@@ -19,6 +19,7 @@ D {IN => [$goal, \@opts]};
     $first = $mid if $goal > $opts[$mid];
     $last  = $mid if $goal < $opts[$mid]
   } while($first != $last);
+  return -1; 
 }
 
 
