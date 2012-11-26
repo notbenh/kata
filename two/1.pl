@@ -12,7 +12,7 @@ D {IN => [$goal, \@opts]};
   my $i;
   do{
     die 'error' if $i++ > 10; # failsafe
-    my $mid = int( $first+ ($last-$first)/2 );
+    my $mid = int( $first + ($last-$first)/2 );
     D {FML => [$first,$mid,$last]};
     return -1 unless defined $opts[$mid];
     return $mid if $goal  == $opts[$mid];
