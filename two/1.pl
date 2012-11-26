@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use Test::Most qw{no_plan};
+use POSIX qw{ceil};
 use Data::Dumper; sub D(@){ warn Dumper(@_) };
 
 sub b_chop{
