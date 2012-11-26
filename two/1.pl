@@ -7,11 +7,13 @@ use Data::Dumper; sub D(@){ warn Dumper(@_) };
 sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
+D {IN => [$goal, \@opts]};
   my ($first,$last) = (0, $#opts);
   my $i;
   do{
     die 'error' if $i++ > 10; # failsafe
     my $mid = int( ($last-$first)/2 );
+    D {FML => [$first,$mid,$last]};
     return -1 unless defined $opts[$mid];
     return $mid if $goal  == $opts[$mid];
     $first = $mid if $goal > $opts[$mid];
