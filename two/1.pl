@@ -17,6 +17,7 @@ D {IN => [$goal, \@opts]};
     return -1 unless defined $opts[$mid];
     return $first if $goal == $opts[$first];
     return $mid   if $goal == $opts[$mid];
+    return $last  if $goal == $opts[$last];
     $first = $mid if $goal > $opts[$mid];
     $last  = $mid if $goal < $opts[$mid]
   } while($first != $last);
