@@ -2,7 +2,6 @@
 use strict;
 use warnings;
 use Test::Most qw{no_plan};
-use POSIX qw{ceil};
 use Data::Dumper; sub D(@){ warn Dumper(@_) };
 
 sub b_chop{
@@ -13,7 +12,7 @@ D {IN => [$goal, \@opts]};
   my $i;
   do{
     die 'error' if $i++ > 10; # failsafe
-    my $mid = ceil( $first + ($last-$first)/2 );
+    my $mid = int( $first + ($last-$first)/2 );
     D {FML => [$first,$mid,$last]};
     return -1 unless defined $opts[$mid];
     return $first if $goal == $opts[$first];
