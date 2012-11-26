@@ -10,7 +10,7 @@ sub b_chop{
 D {IN => [$goal, \@opts]};
   my ($first,$last) = (0, $#opts);
   my $i;
-  while($first != $last) {
+  do{
     die 'error' if $i++ > 10; # failsafe
     my $mid = int( ($last-$first)/2 );
     D {FML => [$first,$mid,$last]};
@@ -18,7 +18,7 @@ D {IN => [$goal, \@opts]};
     return $mid if $goal  == $opts[$mid];
     $first = $mid if $goal > $opts[$mid];
     $last  = $mid if $goal < $opts[$mid]
-  }
+  } while($first != $last);
 }
 
 
