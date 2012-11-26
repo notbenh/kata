@@ -15,6 +15,7 @@ D [$first,$mid,$last]
 is -1, b_chop(3, []);
 is -1, b_chop(3, [1]);
 is 0,  b_chop(1, [1]);
+__END__
 
 is 0,  b_chop(1, [1, 3, 5]);
 is 1,  b_chop(3, [1, 3, 5]);
