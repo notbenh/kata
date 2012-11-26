@@ -3,6 +3,8 @@ use strict;
 use warnings;
 use Test::Most qw{no_plan};
 
+sub chop{};
+
 is -1, chop(3, []);
 is -1, chop(3, [1]);
 is 0,  chop(1, [1]);
