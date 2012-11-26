@@ -13,7 +13,7 @@ D {IN => [$goal, \@opts]};
   while($first != $last) {
     die 'error' if $i++ > 10; # failsafe
     my $mid = int( ($last-$first)/2 );
-    D [$first,$mid,$last];
+    D {FML => [$first,$mid,$last]};
     return -1 unless defined $opts[$mid];
     return $mid if $goal  == $opts[$mid];
     $first = $mid if $goal > $opts[$mid];
