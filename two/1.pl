@@ -8,7 +8,13 @@ sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
   my ($first,$mid,$last) = (0, int($#opts/2), $#opts);
-D [$first,$mid,$last]
+  my $i;
+  while($first != $last) {
+    die 'error' if $i++ > 10;
+    return $mid if $goal == $opts[$mid];
+    $first = $mid if $goal > $opts[$mid];
+    $last  = $mid if $goal < $opts[$mid]
+  }
 }
 
 
