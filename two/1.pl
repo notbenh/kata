@@ -7,8 +7,8 @@ use Data::Dumper; sub D(@){ warn Dumper(@_) };
 sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
-  my ($first,$mix,$last) = (0, int($#opts/2), $#opts);
-D [$first,$min,$last]
+  my ($first,$mid,$last) = (0, int($#opts/2), $#opts);
+D [$first,$mid,$last]
 }
 
 
