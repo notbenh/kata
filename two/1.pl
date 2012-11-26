@@ -11,6 +11,7 @@ sub b_chop{
   my $i;
   while($first != $last) {
     die 'error' if $i++ > 10; # failsafe
+    D [$first,$mid,$last];
     return $mid if $goal == $opts[$mid];
     $first = $mid if $goal > $opts[$mid];
     $last  = $mid if $goal < $opts[$mid]
