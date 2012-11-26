@@ -5,7 +5,7 @@ use Test::Most qw{no_plan};
 
 sub b_chop{
   my $goal = shift;
-  my @opts = @$_[0];
+  my @opts = @{$_[0]};
   return $#opts/2;
 }
 
