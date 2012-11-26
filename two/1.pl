@@ -10,7 +10,7 @@ sub b_chop{
   my ($first,$mid,$last) = (0, int($#opts/2), $#opts);
   my $i;
   while($first != $last) {
-    die 'error' if $i++ > 10;
+    die 'error' if $i++ > 10; # failsafe
     return $mid if $goal == $opts[$mid];
     $first = $mid if $goal > $opts[$mid];
     $last  = $mid if $goal < $opts[$mid]
