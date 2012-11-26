@@ -11,7 +11,7 @@ sub b_chop{
   my ($first,$last) = (0, $#opts);
   my $i;
   do{
-    die 'error' if $i++ > 10; # failsafe
+    die 'error' if $i++ > $#opts; # failsafe
     my $mid = int( $first + ($last-$first)/2 );
     #D {FML => [$first,$mid,$last]};
     return -1 unless defined $opts[$mid];
