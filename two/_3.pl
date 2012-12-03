@@ -9,7 +9,7 @@ sub b_chop{
   my @opts = @{$_[0]};
   #D {IN => [$goal, \@opts]};
   my @first = splice @opts, 0, int($#opts/2);
-  D {F => \@first, S => \@opts};
+  D {IN => $_[0], F => \@first, S => \@opts};
 }
 
 
