@@ -4,7 +4,10 @@ use warnings;
 use Test::Most qw{no_plan};
 use Data::Dumper; sub D(@){ warn Dumper(@_) };
 
-sub b_chop{ D {BCHOP => _b_chop(@_)} }
+sub b_chop{ D { BCHOP => _b_chop(@_)
+              , IN    => \@_
+              }
+          }
 
 sub _b_chop {
   my $goal = shift;
