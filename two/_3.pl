@@ -10,7 +10,7 @@ sub b_chop{
   my $half = int($#opts/2);
   D {IN => \@opts
     , F => [@opts[0,$half]]
-    , S => [@opts[$half,]]
+    , S => [@opts[$half+1,$#opts]]
     }
 }
 
