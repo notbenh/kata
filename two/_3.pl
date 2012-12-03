@@ -9,7 +9,7 @@ sub b_chop{
   my @opts = @{$_[0]};
   my @first= splice @opts, 0, int($#opts/2)+1; # +1 to prefer @first over what ammounts to second
   #D {IN => $_[0] , F => \@first , S => \@opts }
-  return @opts ? [b_chop($goal,\@first),b_chop($goal,\@opts)] : \@first ;
+  D @opts ? [b_chop($goal,\@first),b_chop($goal,\@opts)] : \@first ;
 }
 
 
