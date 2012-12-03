@@ -13,7 +13,7 @@ sub _b_chop {
   my $goal = shift;
   my @opts = @{$_[0]};
   my @first= splice @opts, 0, int($#opts/2)+1; # +1 to prefer @first over what ammounts to second
-  D {GOAL => $goal, SPLIT => [\@first,\@opts] };
+  #D {GOAL => $goal, SPLIT => [\@first,\@opts] };
   if(@opts) {
     return (b_chop($goal,\@first),_b_chop($goal,\@opts));
   }
