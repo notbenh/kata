@@ -4,12 +4,14 @@ use warnings;
 use Test::Most qw{no_plan};
 use Data::Dumper; sub D(@){ warn Dumper(@_) };
 
-sub b_chop{
+sub b_chop{ D _b_chop(@_) }
+
+sub _b_chop {
   my $goal = shift;
   my @opts = @{$_[0]};
   my @first= splice @opts, 0, int($#opts/2)+1; # +1 to prefer @first over what ammounts to second
   #D {IN => $_[0] , F => \@first , S => \@opts }
-  D @opts ? [b_chop($goal,\@first),b_chop($goal,\@opts)] : \@first ;
+  return @opts ? [_b_chop($goal,\@first),_b_chop($goal,\@opts)] : \@first ;
 }
 
 
