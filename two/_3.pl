@@ -15,7 +15,7 @@ sub _b_chop {
   my @first= splice @opts, 0, int($#opts/2)+1; # +1 to prefer @first over what ammounts to second
   D {GOAL => $goal, IN => $_[0] , F => \@first , S => \@opts };
   if(@opts) {
-    return join '', b_chop($goal,\@first),_b_chop($goal,\@opts);
+    return (b_chop($goal,\@first),_b_chop($goal,\@opts));
   }
   else {
     my $match = $first[0] eq $goal;
