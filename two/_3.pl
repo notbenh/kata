@@ -15,10 +15,6 @@ sub _b_chop {
   return @opts ? (_b_chop($goal,\@first),_b_chop($goal,\@opts)) : $first[0] eq $goal ? 1 : 0; 
 }
 
-warn '---------------------------';
-
-is 0,  b_chop(1, [1, 3, 5, 7]);
-__END__
 
 is -1, b_chop(3, []);
 is -1, b_chop(3, [1]);
