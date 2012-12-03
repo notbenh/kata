@@ -13,7 +13,7 @@ sub _b_chop {
   #D {GOAL => $goal, SPLIT => [\@first,\@opts] };
   # if there is only one item in @first, return 1 or 0 based on match to $goal, otherwise recurse
   if (@opts) {
-    return _b_chop($goal,\@first), map{0} @opts if $goal <= $first[-1];
+    return _b_chop($goal,\@first), join('',map{0} @opts) if $goal <= $first[-1];
     return join('',map{0}@first), _b_chop($goal,\@opts);
   }
   else {
