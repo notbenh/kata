@@ -4,7 +4,7 @@ use warnings;
 use Test::Most qw{no_plan};
 use Data::Dumper; sub D(@){ warn Dumper(@_) };
 
-sub b_chop{ warn join('',_b_chop(@_)) }
+sub b_chop{ index( join('',_b_chop(@_)),1) }
 
 sub _b_chop {
   my $goal = shift;
