@@ -11,14 +11,8 @@ sub _b_chop {
   my @opts = @{$_[0]};
   my @first= splice @opts, 0, int($#opts/2)+1; # +1 to prefer @first over what ammounts to second
   #D {GOAL => $goal, SPLIT => [\@first,\@opts] };
-  if(@opts) {
-    return (_b_chop($goal,\@first),_b_chop($goal,\@opts));
-  }
-  else {
-    my $match = $first[0] eq $goal;
-    #D {SINGLE => [$goal,@first], MATCH => $match} ;
-    return $match ? 1 : 0; # make sure we can return something
-  }
+  # if there is only one item in @first, return 1 or 0 based on match to $goal, otherwise recurse
+  return @opts ? (b_chop($goal,\@first),_b_chop($goal,\@opts)) : $first[0] eq $goal ? 1 : 0; 
 }
 
 warn '---------------------------';
