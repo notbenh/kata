@@ -7,11 +7,9 @@ use Data::Dumper; sub D(@){ warn Dumper(@_) };
 sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
-  my @first= splice @opts, 0, int($#opts/2)+1;
-  D {IN => $_[0]
-    , F => \@first
-    , S => \@opts
-    }
+  my @first= splice @opts, 0, int($#opts/2)+1; # +1 to prefer @first over what ammounts to second
+  #D {IN => $_[0] , F => \@first , S => \@opts }
+  return @opts ? [b_chop($goal,\@first),b_chop($goal,\@opts)] : \@first ;
 }
 
 
