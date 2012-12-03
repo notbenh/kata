@@ -7,9 +7,9 @@ use Data::Dumper; sub D(@){ warn Dumper(@_) };
 sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
-  my $half = int($#opts/2);
-  D {IN => \@opts
-    , F => [@opts[0,$half]]
+  my @first= splice @opts, 0, int($#opts/2);
+  D {IN => $_[0]
+    , F => 
     , S => [@opts[$half+1,$#opts]]
     }
 }
