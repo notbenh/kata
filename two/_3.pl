@@ -8,7 +8,7 @@ sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
   #D {IN => [$goal, \@opts]};
-  my @first = splice @opts, 0, int($#opts/2);
+  my @first = splice @opts, 0, int($#opts-1/2);
   D {IN => $_[0], F => \@first, S => \@opts};
 }
 
