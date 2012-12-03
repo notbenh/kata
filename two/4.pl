@@ -45,4 +45,6 @@ is -1, b_chop(6, [1, 3, 5, 7]);
 is -1, b_chop(8, [1, 3, 5, 7]);
 
 
+__END__ 
+Basicly this is an improvement on 3 by not following the split version we already know does not match thus this should narrow down the one single branch and then float the match back up.
 
