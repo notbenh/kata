@@ -7,11 +7,10 @@ use Data::Dumper; sub D(@){ warn Dumper(@_) };
 sub b_chop{
   my $goal = shift;
   my @opts = @{$_[0]};
-  #D {IN => [$goal, \@opts]};
+  my $half = int($#opts/2);
   D {IN => \@opts
-    , C => $#opts
-    , H => $#opts/2
-    , S => int($#opts/2)
+    , F => [@opts[0,$half]]
+    , S => [@opts[$half,]]
     }
 }
 
