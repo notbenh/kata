@@ -16,7 +16,7 @@ sub _b_chop {
   }
   else {
     my $match = $first[0] eq $goal;
-    D {SINGLE => [$goal,@first], MATCH => $match} ;
+    #D {SINGLE => [$goal,@first], MATCH => $match} ;
     return $match ? 1 : 0; # make sure we can return something
   }
 }
