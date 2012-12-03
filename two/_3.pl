@@ -18,8 +18,9 @@ sub _b_chop {
     return join '', b_chop($goal,\@first),_b_chop($goal,\@opts);
   }
   else {
-    D {SINGLE => [$goal,@first], MATCH => $first[0] eq $goal};
-    return $first[0] eq $goal ? 1 : 0;
+    my $match = $first[0] eq $goal;
+    D {SINGLE => [$goal,@first], MATCH => $match} if $match;
+    return $match ? 1 : 0;
   }
 }
 
