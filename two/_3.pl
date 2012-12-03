@@ -12,7 +12,7 @@ sub _b_chop {
   my @first= splice @opts, 0, int($#opts/2)+1; # +1 to prefer @first over what ammounts to second
   #D {GOAL => $goal, SPLIT => [\@first,\@opts] };
   # if there is only one item in @first, return 1 or 0 based on match to $goal, otherwise recurse
-  return @opts ? (b_chop($goal,\@first),_b_chop($goal,\@opts)) : $first[0] eq $goal ? 1 : 0; 
+  return @opts ? (_b_chop($goal,\@first),_b_chop($goal,\@opts)) : $first[0] eq $goal ? 1 : 0; 
 }
 
 warn '---------------------------';
