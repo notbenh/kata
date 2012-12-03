@@ -9,8 +9,8 @@ sub b_chop{
   my @opts = @{$_[0]};
   my @first= splice @opts, 0, int($#opts/2);
   D {IN => $_[0]
-    , F => 
-    , S => [@opts[$half+1,$#opts]]
+    , F => \@first
+    , S => \@_
     }
 }
 
