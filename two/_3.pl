@@ -19,7 +19,7 @@ sub _b_chop {
   }
   else {
     D {SINGLE => [$goal,@first], MATCH => $first[0] eq $goal};
-    return $first[0] eq $goal ;
+    return $first[0] eq $goal ? 1 : 0;
   }
 }
 
